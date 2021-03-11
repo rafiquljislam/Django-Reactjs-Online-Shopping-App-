@@ -1,0 +1,35 @@
+from django.urls import path
+from .views import *
+
+
+urlpatterns = [
+    path('products/', ProductsView.as_view()),
+    path('cartproducts/', CategoryProductsView.as_view()),
+    path('categorys/', CategoryView.as_view()),
+    path('category/<int:pk>/', SingleCategoryProducts.as_view()),
+    path('brandes/', BrandView.as_view()),
+    path('brande/<int:pk>/', SingleBrandProducts.as_view()),
+    path('brandeproducts/', BrandProductsView.as_view()),
+    path('slider/', SliderView.as_view()),
+    path('tranding/', TrandingProductView.as_view()),
+    path('search/<str:q>/', SearchView.as_view()),
+    path('product/<int:pk>/', SingleProduct.as_view()),
+    # path('productforme/<int:pk>/', ProductsForYou.as_view()),
+    path('customer/', MyProfile.as_view()),
+    path('updatecustomer/', UpdateCustomer.as_view()),
+    path('changepassword/', ChangePassword.as_view()),
+    path('register/', RegisterUserView.as_view()),
+    path('mycart/', MyCart.as_view()),
+    path('oldcart/', OldCart.as_view()),
+    path('oldcart/<int:pk>/', OldCart.as_view()),
+    path('addtocart/', AddtoCartView.as_view()),
+    path('editcartproduct/', EditCartProduct.as_view()),
+    path('delatecartproduct/', DelateCartProduct.as_view()),
+    path('delatecart/', DelateCart.as_view()),
+    path('ordernow/', OrderNow.as_view()),
+    path('viewproduct/', ViewProduct.as_view()),
+    path('addtofavorit/', AddToFavoritView.as_view()),
+    path('addreview/', AddReview.as_view()),
+    path('mostviewproduct/', MostViewsProducts.as_view()),
+    path('delateoldorder/', DelateOldOrder.as_view()),
+]
